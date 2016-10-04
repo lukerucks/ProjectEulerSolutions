@@ -47,5 +47,6 @@ def p065():
     # print counter, convergent
     return sum_of_digits_of_numerator(convergent)
 
-print "\ntest for e"
-print p065()
+if __name__ == '__main__':
+    print "\ntest for e"
+    print p065()

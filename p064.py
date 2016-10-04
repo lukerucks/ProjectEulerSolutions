@@ -33,18 +33,19 @@ def get_next_fraction(sq, b,c):
     max_val = -100
     max_i = 0
     sqrt = math.sqrt(sq)
-    for i in range(10):
-        val = new_c*i - b
-        if val > sqrt:
-            break
-        elif val > max_val:
+    i = 0
+    val = new_c*i - b
+    while val <= sqrt:
+        if val > max_val:
             max_val = val
             max_i = i
+        i += 1
+        val = new_c*i - b
     # next digit to store, [new_b, new_c]
     return max_i, max_val, new_c
 
 
-print find_fraction_repr(23)
+# print find_fraction_repr(23)
 
 
 # Turns out this was unnecessary; from previous attempt
@@ -121,7 +122,9 @@ def p064(total_range):
             print i
     return odd
 
-print p064(10000)
+if __name__ == '__main__':
+    print p064(10000)
+
 
 
 
